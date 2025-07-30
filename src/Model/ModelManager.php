@@ -182,13 +182,11 @@ final class ModelManager implements ModelManagerInterface, LockInterface, ProxyR
     }
 
     /**
-     * NEXT_MAJOR: Change the visibility to private.
-     *
      * @param string|object $class
      *
      * @phpstan-param class-string|object $class
      */
-    public function getEntityManager($class): EntityManagerInterface
+    private function getEntityManager($class): EntityManagerInterface
     {
         if (\is_object($class)) {
             $class = $class::class;
@@ -221,7 +219,7 @@ final class ModelManager implements ModelManagerInterface, LockInterface, ProxyR
         return $query instanceof ProxyQuery || $query instanceof AbstractQuery || $query instanceof QueryBuilder;
     }
 
-    public function executeQuery(object $query)
+    public function executeQuery(object $query):iterable
     {
         if ($query instanceof QueryBuilder) {
             return $query->getQuery()->execute();

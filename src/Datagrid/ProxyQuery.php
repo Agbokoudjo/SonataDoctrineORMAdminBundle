@@ -133,7 +133,7 @@ final class ProxyQuery implements ProxyQueryInterface
     /**
      * @return Paginator<T>
      */
-    public function execute()
+    public function execute():iterable
     {
         return SmartPaginatorFactory::create($this, $this->hints);
     }

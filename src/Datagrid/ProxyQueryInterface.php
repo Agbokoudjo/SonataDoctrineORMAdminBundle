@@ -26,7 +26,7 @@ interface ProxyQueryInterface extends BaseProxyQueryInterface
     /**
      * @return array<T>|(\Traversable<T>&\Countable)
      */
-    public function execute();
+    public function execute():iterable;
 
     public function getUniqueParameterId(): int;
 
