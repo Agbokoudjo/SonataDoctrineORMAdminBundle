@@ -100,7 +100,7 @@ final class ModelManager implements ModelManagerInterface, LockInterface, ProxyR
                 \sprintf('Failed to update object: %s', $this->getRealClass($object)),
                 (int) $exception->getCode(),
                 $exception
-            );
+            );         
         }
     }
 
